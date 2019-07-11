@@ -1,5 +1,9 @@
+const settings = require('./src/settings.js');
+
 exports.createPages = ({ actions, reporter }) => {
-  reporter.warn("make sure to load data from somewhere!")
+  const gatsby_node_path = settings.gatsby_nodes;
+
+  reporter.warn(`gatsby_node_path ` + gatsby_node_path);
 
   // TODO replace this with data from somewhere
   actions.createPage({

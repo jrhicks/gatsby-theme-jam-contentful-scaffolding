@@ -5,5 +5,13 @@
  */
 
 module.exports = {
-  plugins: ["gatsby-theme-jam-example"],
+  plugins: [
+    "gatsby-theme-content",
+    {
+      resolve: `gatsby-plugin-compile-es6-packages`,
+      options: {
+        modules: ['gatsby-theme-blog']
+      }
+    }
+  ],
 }

@@ -1,51 +1,36 @@
-# Gatsby Theme Jam Example Submission
+# Why
 
-This is a bare-bones Gatsby theme to showcase how a [Theme Jam](https://themejam.gatsbyjs.org) submission should look.
+Creating index and show pages for any type of content should take seconds.  Similar to how Ruby-On-Rails combined code-generation and conventions to make scaffolding CRUD interfaces effortless, gatsby-theme-content makes it trivial to create Index and Show pages for a custom content types in seconds.
 
-See the [live demo](https://gatsby-theme-jam-example.netlify.com)
+# What
 
-## Installation
+Scaffold page-creators to index and show many different types of content.
 
-To use this theme in your Gatsby sites, follow these instructions:
+* Scaffold CLI - Scaffold front-end index.js and show.js components and back-end page-creators.
 
-1.  Install the theme
-    ```sh
-    npm install --save gatsby-theme-jam-example
-    ```
+* Node Conventions - Page Creators scaffolded into `src/page-creators` get auto-magicly wired into build.
 
-2.  Add the theme to your `gatsby-config.js`:
-    ```js
-    module.exports = {
-      plugins: [
-        'gatsby-theme-jam-example'
-      ]
-    }
-    ```
+* Component Conventions - Layouts, Show, and Indexes are reminiscent of Ruby-On-Rails view conventions.
 
-3.  Start your site
-    ```sh
-    gatsby develop
-    ```
+* Style Agnostic - Bring your own style, we just want to help wire in new content types.
 
-## Submission Checklist
+* Dependencies - The theme manages all gatsby-plugins necessary for working with Contentful and image best practices.
 
-To ensure your Theme Jam submission [follows the rules](https://themejam.gatsbyjs.org/rules), use this checklist:
+# How
 
-- [ ] Use our [accessibility guide][a11y] to ensure your site meets our accessibility standards
-- [ ] Run a performance audit using [Lighthouse][] and/or [WebPageTest][]
-- [ ] Set up a live demo using [Netlify][] or [GitHub Pages][]
-- [ ] Add installation documentation to the README
-- [ ] Update the `name` field in `package.json`
-- [ ] Update the `author` field in `package.json`
-- [ ] Update the `repository` field in `package.json`
-- [ ] Make sure the theme’s `keywords` in `package.json` include `gatsby`, `gatsby-theme`, and `gatsby-plugin`
-- [ ] Publish your theme to npm ([docs][npmpublish])
-- [ ] Submit your theme at https://themejam.gatsbyjs.org
+**Gatsby Themes**
 
-[a11y]: https://gatsbyjs.org/docs/making-your-site-accessible#how-to-improve-accessibility
-[Lighthouse]: https://developers.google.com/web/tools/lighthouse/
-[axe]: https://www.deque.com/axe/
-[WebPageTest]: http://webpagetest.org/
-[Netlify]: https://netlify.com
-[GitHub Pages]: https://pages.github.com/
-[npmpublish]: https://docs.npmjs.com/cli/publish
+Gatsby's release of gatsby-themes makes it easy to package up multiple plugins into a cohisive shippable unit allowing for 1 stop shop of all necessary plugins to successfully work with contentful
+
+**Gatsby Theme Shadowing**
+
+By convention the theme creates pages for each export in `/src/page-creators`.  Thanks to shadowing feture of gatsby-themes the theme uses `/src/gatsby-theme-content/settings.js` instead of the actual settings.js within the module.  Since this local settings.js's path is fixed relative to the page-creators folder,it can easily furnish the page-creators path.  This allows the theme to correctly locate the page-creators folder regardless of where the themes source code actually resides (node_modules, yarn workspace, or other),
+
+**Contentful API**
+
+Contentful is cool and lets us introspect types.
+
+**Sails.js Generators**
+
+No need to write a generator froms scratch.  Let's use Sails.js
+
